@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="action_reports_info_menu" model="ir.actions.act_window">
+            <field name="name">Reportes 📊</field>
+            <field name="res_model">reports.info</field>
+            <field name="view_mode">tree,kanban,form</field>
+            <field name="domain">[]</field>
+            <field name="help" type="html">
+                <p class="o_view_overview_empty_folder">
+                    Crear Nuevo Reporte
+                </p>
+            </field>
+        </record>
+
+        <!-- === .::: Seccion de menus :::. === -->
+
+        <menuitem id="menu_info"
+                  name="Reportes Odoo"
+                  sequence="10"
+                  groups="base.group_user,base.group_partner_manager"
+                  web_icon="reports,static/description/icon.png"/>
+
+        <menuitem id="menu_action_info"
+                  name="Listado Reportes"
+                  sequence="1"
+                  parent="menu_info"
+                  action="action_reports_info_menu"
+                  groups="base.group_user"/>
+
+        <menuitem id="reports_ajustes_menu"
+                  name="Ajustes"
+                  sequence="11"
+                  parent="menu_info"
+                  groups="base.group_user,base.group_partner_manager"/>
+
+    </data>
+</odoo>
