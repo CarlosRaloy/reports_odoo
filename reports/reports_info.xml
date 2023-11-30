@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+
+        <record id="paperformat_reports_info" model="report.paperformat">
+            <field name="name">Info Letter</field>
+            <field name="default" eval="True"/>
+            <field name="format">Letter</field>
+            <field name="page_height">0</field>
+            <field name="page_width">0</field>
+            <field name="orientation">Portrait</field>
+            <field name="margin_top">15</field>
+            <field name="margin_bottom">15</field>
+            <field name="margin_left">7</field>
+            <field name="margin_right">7</field>
+            <field name="header_line" eval="False"/>
+            <field name="header_spacing">10</field>
+            <field name="dpi">90</field>
+        </record>
+
+        <report
+                id="report_reports_info"
+                model="reports.info"
+                string="Reporte de Informacion"
+                name="reports.report_reports_info_view"
+                file="reports.report_reports_info_View"
+                report_type="qweb-html"
+                print_report_name="'Registro - %s' % (object.name)"/>
+
+        <template id="report_reports_info_view">
+            <t t-call="web.html_container">
+                <t t-foreach="docs" t-as="doc">
+                    <t t-call="web.external_layout">
+                        <div class="page">
+                            <div class="col-sm-12" name="title">
+                                <h2>Titulo: <t t-esc="doc.name"/></h2>
+                            </div>
+
+                        </div>
+                    </t>
+                </t>
+            </t>
+        </template>
+
+    </data>
+</odoo>

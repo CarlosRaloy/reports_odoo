@@ -9,6 +9,7 @@
             <field name="arch" type="xml">
                 <form string="Info">
                     <header>
+                        <button name="imprimir_reporte" type="object" string="📑 Imprimir" class="btn btn-primary" groups="reports.group_reports_info"/>
                         <field name="well_view" widget="statusbar"/>
                     </header>
                     <sheet>

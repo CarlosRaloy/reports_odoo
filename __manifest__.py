@@ -10,6 +10,7 @@
     'data': [
         'security/ir.model.access.csv',  # First is the security
         'views/info.xml',
+        'reports/reports_info.xml',
         'views/menu.xml',  # The rule is the last menu
     ],
     'installable': True,
