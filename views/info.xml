@@ -23,6 +23,7 @@
                             <group>
                                 <field name="partner_id"/>
                                 <field name="well_view"/>
+                                <!--<field name="get_all_invoices"/>-->
                             </group>
                         </group>
                     </sheet>
